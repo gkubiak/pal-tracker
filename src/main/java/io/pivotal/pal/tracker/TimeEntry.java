@@ -11,7 +11,7 @@ public class TimeEntry {
     private final LocalDate date;
     private final int hours;
 
-    public TimeEntry(long id, long projectId, long userId, LocalDate date, int hours) {
+    public TimeEntry(long id, long userId, long projectId, LocalDate date, int hours) {
         this.id = id;
         this.projectId = projectId;
         this.userId = userId;
@@ -19,7 +19,7 @@ public class TimeEntry {
         this.hours = hours;
     }
 
-    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
+    public TimeEntry(long userId, long projectId, LocalDate date, int hours) {
         this(0, userId, projectId, date, hours);
     }
 

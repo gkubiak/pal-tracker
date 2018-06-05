@@ -39,8 +39,8 @@ public class TimeEntryApiTest {
 
         DocumentContext createJson = parse(createResponse.getBody());
         assertThat(createJson.read("$.id", Long.class)).isGreaterThan(0);
-        assertThat(createJson.read("$.projectId", Long.class)).isEqualTo(123L);
-        assertThat(createJson.read("$.userId", Long.class)).isEqualTo(456L);
+        assertThat(createJson.read("$.projectId", Long.class)).isEqualTo(456L);
+        assertThat(createJson.read("$.userId", Long.class)).isEqualTo(123L);
         assertThat(createJson.read("$.date", String.class)).isEqualTo("2017-01-08");
         assertThat(createJson.read("$.hours", Long.class)).isEqualTo(8);
     }
@@ -75,8 +75,8 @@ public class TimeEntryApiTest {
         assertThat(readResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
         DocumentContext readJson = parse(readResponse.getBody());
         assertThat(readJson.read("$.id", Long.class)).isEqualTo(id);
-        assertThat(readJson.read("$.projectId", Long.class)).isEqualTo(123L);
-        assertThat(readJson.read("$.userId", Long.class)).isEqualTo(456L);
+        assertThat(readJson.read("$.projectId", Long.class)).isEqualTo(456L);
+        assertThat(readJson.read("$.userId", Long.class)).isEqualTo(123L);
         assertThat(readJson.read("$.date", String.class)).isEqualTo("2017-01-08");
         assertThat(readJson.read("$.hours", Long.class)).isEqualTo(8);
     }
@@ -94,8 +94,8 @@ public class TimeEntryApiTest {
 
         DocumentContext updateJson = parse(updateResponse.getBody());
         assertThat(updateJson.read("$.id", Long.class)).isEqualTo(id);
-        assertThat(updateJson.read("$.projectId", Long.class)).isEqualTo(2L);
-        assertThat(updateJson.read("$.userId", Long.class)).isEqualTo(3L);
+        assertThat(updateJson.read("$.projectId", Long.class)).isEqualTo(3L);
+        assertThat(updateJson.read("$.userId", Long.class)).isEqualTo(2L);
         assertThat(updateJson.read("$.date", String.class)).isEqualTo("2017-01-09");
         assertThat(updateJson.read("$.hours", Long.class)).isEqualTo(9);
     }
