@@ -36,7 +36,7 @@ public class TimeEntryControllerTest {
             .create(any(TimeEntry.class));
 
 
-        ResponseEntity response = controller.create(timeEntryToCreate);
+        ResponseEntity<TimeEntry> response = controller.create(timeEntryToCreate);
 
 
         verify(timeEntryRepository).create(timeEntryToCreate);
