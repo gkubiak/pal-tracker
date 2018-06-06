@@ -78,8 +78,8 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
 
     private final RowMapper<TimeEntry> mapper = (rs, rowNum) -> new TimeEntry(
         rs.getLong("id"),
-        rs.getLong("project_id"),
         rs.getLong("user_id"),
+        rs.getLong("project_id"),
         rs.getDate("date").toLocalDate(),
         rs.getInt("hours")
     );
